@@ -1,4 +1,4 @@
-package data_structure;
+package algorithm;
  
 public class fibonacci{
 	public static void main(String args[]){
