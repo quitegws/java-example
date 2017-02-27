@@ -1,6 +1,6 @@
 package data_structure;
  
-public class Main{
+public class fibonacci{
 	public static void main(String args[]){
 		for(int i=0; i<10; i++){
 			System.out.println("第"+ i + "个斐波那契数是：" + fun(i) );
