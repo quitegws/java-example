@@ -1,4 +1,4 @@
-package lintcode;
+package algorithm;
 
 import java.util.Scanner;
 
