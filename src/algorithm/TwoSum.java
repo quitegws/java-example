@@ -30,4 +30,20 @@ public class TwoSum {
 		return result;
 	}
 
+	public static int[] twosum(int[] numbers, int target){
+		if (numbers.length <= 1){
+			return new int[]{0, 0};
+		}
+		
+		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+		for (int i = 0; i < numbers.length; i++){
+			if (map.get(target - numbers[i]) == null){
+				map.put(numbers[i], i);
+			} else {
+				return new int[]{map.get(target - numbers[i]) + 1, i + 1};
+			}
+		}
+		
+		return new int[]{};
+	}
 }
