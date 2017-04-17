@@ -1,2 +1,1 @@
-# java-example
-java 例程
+# lintcode
