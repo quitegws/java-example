@@ -7,4 +7,8 @@ package list;
          val = x;
          next = null;      
      }
+    public ListNode(){
+    	val = 0;
+    	next = null;
+    }
  }

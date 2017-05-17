@@ -35,6 +35,7 @@ public class ListUtils {
 			
 		}
 		
+		System.out.println();
 	}
 	
 	public static void print(String s){

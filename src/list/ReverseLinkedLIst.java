@@ -20,8 +20,6 @@ public class ReverseLinkedLIst {
     		point = head;
     		
     		head = tmp;
-    		
-    		
     	}
     	
     	return point;

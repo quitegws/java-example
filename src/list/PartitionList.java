@@ -38,23 +38,4 @@ public class PartitionList {
     	return leftTmp.next;
     }
 
-
-    public static ListNode partition2(ListNode head, int x){
-    	if (head == null) {
-    		return null;
-    		
-    	}
-    	
-    	ListNode pointer1 = head;
-    	ListNode pointer2 = head;
-    	ListNode point = head;
-    	
-    	while (point != null) {
-    		int val = point.val;
-    		if (val < x) {
-    			
-    		}
-    	}
-    	return null;
-    }
 }
