@@ -17,6 +17,7 @@ public class RotateString {
     		return;
     	}
     	int len = str.length;
+    	offset %= len;
     	for (int i = 0; i < offset; i++) {
     		char last = str[len - 1];
     		for (int j = len - 1; j > 0; j--) {
