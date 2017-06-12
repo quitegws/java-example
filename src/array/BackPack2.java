@@ -8,6 +8,8 @@ public class BackPack2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(new BackPack2().backPack(10, new int[]{2, 3, 5, 7}));
+		System.out.println();
+		System.getProperties().list(System.out);
 	}
     public int backPackII(int m, int[] A, int V[]) {
         // write your code here
