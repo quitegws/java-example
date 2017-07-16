@@ -29,7 +29,7 @@ public class LevelOrderTraversal {
     	if (root == null) {
     		return result;
     	}
-    	Queue<TreeNode<Integer>> queue = new LinkedList<>();
+    	Queue<TreeNode> queue = new LinkedList<>();
     	queue.offer(root);
     	while (!queue.isEmpty()) {
     		int len = queue.size();
@@ -38,8 +38,8 @@ public class LevelOrderTraversal {
     		for (int i = 0; i < len; i++) {
     			TreeNode node = (TreeNode)queue.poll();
     			list.add((int)node.val);
-    			TreeNode<Integer> left = node.left;
-    			TreeNode<Integer> right = node.right;
+    			TreeNode left = node.left;
+    			TreeNode right = node.right;
     			if (left != null) {
     				queue.offer(left);
     			}

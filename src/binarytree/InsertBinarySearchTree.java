@@ -20,7 +20,7 @@ public class InsertBinarySearchTree {
     	if (root == null || node == null) {
     		return null;
     	}
-    	if (root.val.compareTo(node.val) <= 0) {
+    	if (root.val < node.val) {
     		if (root.right == null) {
     			root.right = node;
     			return root;
@@ -36,11 +36,11 @@ public class InsertBinarySearchTree {
     	return root;
     }
     
-    public static TreeNode<Integer> insertNode2(TreeNode<Integer> root, TreeNode<Integer> node){
+    public static TreeNode insertNode2(TreeNode root, TreeNode node){
     	if (root == null) {
     		return node;
     	}
-    	TreeNode<Integer> current = root;
+    	TreeNode current = root;
     	
     	while (current != null) {
     		if (current.val == node.val) {
@@ -77,7 +77,7 @@ public class InsertBinarySearchTree {
     	
     	
     	Utils.printTreePretty(root);
-    	TreeNode node = new TreeNode(0);
+    	TreeNode node = new TreeNode(9);
     	Utils.printTreePretty(insertNode(root, node));
     	
     	

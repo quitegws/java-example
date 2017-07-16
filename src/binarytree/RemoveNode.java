@@ -1,5 +1,8 @@
 package binarytree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition of TreeNode:
  * public class TreeNode {
@@ -17,36 +20,49 @@ public class RemoveNode {
      * @param value: Remove the node with given value.
      * @return: The root of the binary search tree after removal.
      */
-    public TreeNode removeNode(TreeNode root, int value) {
+    public static TreeNode removeNode(TreeNode root, int value) {
         // write your code here
     	if (root == null) {
     		return null;
     	}
-    	TreeNode root2 = root;
+    	TreeNode tmp = root;
+    	TreeNode parent = new TreeNode(0);
+    	parent.left = root;
+    	boolean isLeft = false;
     	while (root != null) {
     		if (root.val > value) {
+    			parent = root;
     			root = root.left;
+    			isLeft = true;
     		} else if (root.val < value) {
+    			parent = root;
     			root = root.right;
+    			isLeft = false;
     		} else {
     			break;
     		}
     	}
-    	if (root == root2) {
+    	if (root == tmp) {
     		return deleteNode(root);
     	} else {
-    		deleteNode(root);
-    		return root2;
+    		if (isLeft) {
+    			parent.left = deleteNode(root);
+    		} else {
+    			parent.right = deleteNode(root);
+    		}
+    		
+    		return tmp;
     	} 
     }
     
-    public TreeNode deleteNode(TreeNode root){
+    public static TreeNode deleteNode(TreeNode root){
+    	if (root == null) {
+    		return null;
+    	}
     	if (root.left == null) {
     		root = root.right;
-    		return root;
     	} else if (root.right == null) {
     		root = root.left;
-    		return root;
     	} else {
     		TreeNode parent = root;
     		TreeNode s = root.left;
@@ -60,16 +76,22 @@ public class RemoveNode {
     		} else {
     			parent.right = s.left;
     		}
-    		return root;
     	}
+    	return root;
     }
     
     public static void main(String[] args){
-    	TreeNode root = new TreeNode(0);
-    	root.right = new TreeNode(1);
-    	root.left = new TreeNode(2);
-    	TreeNode tmp = root;
-    	tmp.left.val = 10;
-    	System.out.println(root.left.val);
+    	String[] data = new String[]{"1","#","2", "#","3","#","4","#"};
+    	TreeNode root = Utils.newTreeFromArray(data);
+    	Utils.printTreePretty(root);
+    	TreeNode node = removeNode(root, 4);
+    	Utils.printTreePretty(node);
+    	
+//    	TreeNode tmp = new TreeNode(1);
+//    	tmp.right = new TreeNode(2);
+//    	tmp.right.right = new TreeNode(3);
+//    	Utils.printTreePretty(tmp);
+//    	tmp = tmp.right;
+//    	Utils.printTreePretty(tmp);
     }
 }

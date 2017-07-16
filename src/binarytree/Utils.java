@@ -23,13 +23,13 @@ public class Utils {
 		}	
 	}
 	
-	public static <T extends Comparable<?>> TreeNode NewTree(List<T> list){
+	public static  TreeNode NewTree(List list){
 		TreeNode root = null;
 		if (list == null || list.size() == 0) {
 			return root;
 		}
 		
-		T val = list.get(0);
+		int val = (int)list.get(0);
 		root = new TreeNode(val);
 		list.remove(0);
 		
@@ -39,38 +39,32 @@ public class Utils {
 		Iterator iter = list.iterator();
 		while (iter.hasNext()) {
 			TreeNode node = (TreeNode) queue.poll();
-			T leftVal = (T)iter.next();
-			T rightVal = null;
+			int leftVal = (int)iter.next();
+			int rightVal = 0;
 			if (iter.hasNext()) {
-				rightVal = (T) iter.next();
+				rightVal = (int) iter.next();
 			}
 			
 			TreeNode left = new TreeNode(leftVal);
 			node.left = left;
 			queue.offer(left);
 			TreeNode right = null;
-			if (rightVal != null) {
-				right = new TreeNode(rightVal); 
-			}
-			
-			if (right != null) {
-				node.right = right;
-				queue.offer(right);
-			}
-			
+			right = new TreeNode(rightVal); 
+			node.right = right;
+			queue.offer(right);
 		}
 		return root;
 	}
 	
-	public static void printTree(TreeNode<?> root){
+	public static void printTree(TreeNode root){
 		if(root == null)
 			return;
-		Queue<TreeNode<?>> queue =  new LinkedList<>();
+		Queue<TreeNode> queue =  new LinkedList<>();
 		queue.add(root);
 		while(!queue.isEmpty()){
 			int len = queue.size();
 			for (int i = 0; i < len; i++) {
-				TreeNode<?> node = queue.poll();
+				TreeNode node = queue.poll();
 				System.out.print(node.val +",");
 				if(node.left != null)
 					queue.add(node.left);
@@ -83,13 +77,13 @@ public class Utils {
 	}
 
 
-    public static <T extends Comparable<?>> void printTreePretty(TreeNode<T> root) {
+    public static  void printTreePretty(TreeNode root) {
         int maxLevel = maxLevel(root);
 
         printNodeInternal(Collections.singletonList(root), 1, maxLevel);
     }
 
-    private static <T extends Comparable<?>> void printNodeInternal(List<TreeNode<T>> nodes, int level, int maxLevel) {
+    private static  void printNodeInternal(List<TreeNode> nodes, int level, int maxLevel) {
         if (nodes.isEmpty() || isAllElementsNull(nodes))
             return;
 
@@ -100,8 +94,8 @@ public class Utils {
 
         printWhitespaces(firstSpaces);
 
-        List<TreeNode<T>> newNodes = new ArrayList<TreeNode<T>>();
-        for (TreeNode<T> TreeNode : nodes) {
+        List<TreeNode> newNodes = new ArrayList<TreeNode>();
+        for (TreeNode TreeNode : nodes) {
             if (TreeNode != null) {
                 System.out.print(TreeNode.val);
                 newNodes.add(TreeNode.left);
@@ -150,7 +144,7 @@ public class Utils {
             System.out.print(" ");
     }
 
-    private static <T extends Comparable<?>> int maxLevel(TreeNode<T> TreeNode) {
+    private static <T extends Comparable<?>> int maxLevel(TreeNode TreeNode) {
         if (TreeNode == null)
             return 0;
 
@@ -184,9 +178,9 @@ public class Utils {
     				node.left = null;
     			} else {
     				node.left = new TreeNode(Integer.valueOf(current));
-    				i++;
     				queue.offer(node.left);
     			}
+    			i++;
     		} else {
     			return root;
     		}
@@ -196,13 +190,30 @@ public class Utils {
     				node.right = null;
     			} else {
     				node.right = new TreeNode(Integer.valueOf(current));
-    				i++;
     				queue.offer(node.right);
     			}
+    			i++;
     		} else {
     			return root;
     		}
     	}
     	return root;
     }
+
+    public static TreeNode newTreeFromArray(int[] data){
+    	if (data == null || data.length == 0) {
+    		return null;
+    	}
+    	int len = data.length;
+    	String[] values = new String[len];
+    	for (int i = 0; i < len; i++) {
+    		values[i] = String.valueOf(data[i]);
+    	}
+    	return newTreeFromArray(values);
+    }
+    
+    public static void echo(String s){
+    	System.out.println(s);
+    }
+    
 }
