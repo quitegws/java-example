@@ -35,15 +35,15 @@ public class PreOrderTraversal {
      * 维护一个栈，将根节点入栈，然后只要栈不为空，出栈并访问，接着依次将访问节点的右节点、左节点入栈。 
      * 这种方式应该是对先序遍历的一种特殊实现（看上去简单明了），但是不具备很好的扩展性，在中序和后序方式中不适用 
      */ 
-    public ArrayList<Integer> preorderTraversal(TreeNode<Integer> root){
-    	Stack<TreeNode<Integer>> stack = new Stack<>();
+    public ArrayList<Integer> preorderTraversal(TreeNode root){
+    	Stack<TreeNode> stack = new Stack<>();
     	ArrayList<Integer> result = new ArrayList<>();
     	
     	if (root != null) {
     		stack.push(root);
     		
     		while (!stack.empty()) {
-    			TreeNode<Integer> node = stack.pop();
+    			TreeNode node = stack.pop();
     			result.add((Integer)node.val);
     			if (node.right != null) {
     				stack.push(node.right);
