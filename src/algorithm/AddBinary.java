@@ -12,6 +12,8 @@ public class AddBinary {
 		String b = s.nextLine();
 		
 		System.out.println(addBinary(a, b));
+		System.out.println("Hello world");
+
 	}
 
     public static String addBinary(String a, String b) {
