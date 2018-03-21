@@ -40,7 +40,7 @@ public class BinaryTreePaths {
     		list.add(sb.toString());
     		
     	}
-    	
+    	return null;
     }
     
     public static List<String> binaryTreePaths(TreeNode root){

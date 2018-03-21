@@ -16,6 +16,6 @@ public class KthSmallestNumberInSortedArray {
     	int row = matrix.length;
     	int col = matrix[0].length;
     	
-    	
+    	return 0;
     }
 }

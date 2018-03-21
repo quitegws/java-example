@@ -12,6 +12,7 @@ public class SmallestDefferences {
      */
     public int smallestDifference(int[] A, int[] B) {
         // write your code here
+        return 0;
     }
 
 }

@@ -12,8 +12,9 @@ public class CoinInAline2 {
      */
     public boolean firstWillWin(int n) {
         // write your code here
-        if () {
+        if (true) {
         	
         }
+        return false;
     }
 }

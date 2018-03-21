@@ -50,7 +50,7 @@ public class SortColors2 {
         rainbowSort(colors, l, right, colorMid + 1, colorTo);
     }
     
-    public void sortColors2(int[] colors, int k) {
+    public void sortColors3(int[] colors, int k) {
         int count = 0;
         int left = 0;
         int right = colors.length - 1;

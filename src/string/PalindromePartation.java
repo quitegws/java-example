@@ -9,7 +9,7 @@ public class PalindromePartation {
      */
     public List<List<String>> partition(String s) {
         // write your code here
-    	
+    	return null;
     	
     }
     
@@ -24,10 +24,12 @@ public class PalindromePartation {
     	int len = s.length();
     	
     	for (int i = 0; i < len / 2; i++) {
-    		if () {
+    		if (true) {
     			
     		}
     	}
+
+    	return false;
     }
     
     

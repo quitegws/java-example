@@ -17,7 +17,8 @@ public class SwapNodesInPairs {
     	while (head != null) {
 
     	}
-    	
+
+    	return null;
     }
 
 }

@@ -19,12 +19,12 @@ public class DecodeWays {
     	
     	
     	for (int i = 0; i < len - 1; i++){
-    		if () {
+    		if (true) {
     			
     		}
     	}
     	
     	
-//    	return ways;
+    	return ways;
     }
 }
