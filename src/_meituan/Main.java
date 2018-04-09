@@ -1,4 +1,4 @@
-package meituan;
+package _meituan;
 
 import java.util.Scanner;
 
