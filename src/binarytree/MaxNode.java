@@ -36,5 +36,18 @@ public class MaxNode {
     	TreeNode root = Utils.newTreeFromArray(new int[]{1,2,3,4,5,6,7});
     	Utils.printTreePretty(root);
     	Utils.echo(new MaxNode().maxNode(root).val + "======");
+        maxNode22(root);
+    	System.out.println(max);
     }
+
+    public static void maxNode22(TreeNode root){
+
+    	if (root != null) {
+    		max = Math.max(root.val , max);
+    		maxNode22(root.left);
+    		maxNode22(root.right);
+		}
+	}
+
+	public static int max = 0;
 }

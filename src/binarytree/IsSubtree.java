@@ -9,13 +9,10 @@ public class IsSubtree {
   public boolean isSubtree(TreeNode T1, TreeNode T2) {
       // write your code here
 	  if (T1 == null) {
-		  if (T2 == null) {
-			  return true;
-		  }
-		  return false;
+		  return T2 == null;
 	  }
 	  if (T2 == null) {
-		  return true;
+		  return T1 == null;
 	  }
 	  if (isEqual(T1, T2)) {
 		  return true;

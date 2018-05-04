@@ -53,7 +53,7 @@ public class Kata {
   }
   
   public static void main(String[] args){
-	  String text = "This is a test[!]";
+	  String text = "This is a file.test[!]";
 	  int cnt = 1;
 	  String entext = encrypt(text,cnt);
 	  

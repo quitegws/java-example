@@ -10,5 +10,6 @@ public class NULL {
         }catch(NullPointerException e){
             System.out.println("NullPointerException");
         }
+
     }
 }

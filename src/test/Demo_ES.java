@@ -1,4 +1,4 @@
-//package test;
+//package file.test;
 //import java.net.InetAddress;
 //import java.net.UnknownHostException;
 //import java.util.Date;
@@ -32,7 +32,7 @@
 //	        System.out.println(e.toString());
 //	    }
 //
-//	    System.out.println("test");
+//	    System.out.println("file.test");
 //	    client.close();
 //	}
 //}

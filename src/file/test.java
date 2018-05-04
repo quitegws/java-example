@@ -1,3 +1,5 @@
+package file;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,7 +16,7 @@ public class test {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		
 		String base = "/Users/gws/Desktop/testwatchdir/";
-		String fileName = "test.txt";
+		String fileName = "file.test.txt";
 		
 
 		while (true) {

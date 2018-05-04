@@ -7,9 +7,41 @@ public class LongestPalindromicSubstring {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(isPalindrome("abcfcbaa"));
-		System.out.println(longestPalindrome("aabccbaa"));
+		System.out.println(longestPalindrome2("aabccbaa"));
 		System.out.println("avc".substring(0, 3));
 	}
+
+	public static String longestPalindrome2(String s){
+        if (s == null || s.equals("")) {
+            return "";
+        }
+        char[] values = s.toCharArray();
+        int len = values.length;
+        boolean[][] dp = new boolean[len][len];
+        for(int i = 0; i < len; i++) dp[i][i] = true;
+
+        String sub = values[0]+"";
+        int max = 0;
+
+        for(int i = 0; i < len; i++){
+            for(int j = 0; j <= i; j++){
+                char c1 = values[i];
+                char c2 = values[j];
+
+                if(i - j < 2) dp[i][j] = c1 == c2;
+
+                if(j >= 1 && i < len - 1 && i - j >= 2)
+                    dp[i][j] = dp[i + 1][j - 1] && c1 == c2;
+
+
+                if(dp[i][j] && j - i + 1 > max) {
+                    max = i - j  + 1;
+                    sub = s.substring(i,j + 1);
+                }
+            }
+        }
+        return sub;
+    }
     /**
      * @param s input string
      * @return the longest palindromic substring

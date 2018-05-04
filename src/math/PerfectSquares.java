@@ -12,7 +12,7 @@ import java.util.List;
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 
 Credits:
-Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
+Special thanks to @jianchao.li.fighter for adding this problem and creating all file.test cases.
 
 
  */
