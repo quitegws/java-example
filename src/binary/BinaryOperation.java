@@ -1,3 +1,5 @@
+package binary;
+
 /**
  * @Author: gws
  * @Date: 22/04/2018 17:06

@@ -9,7 +9,7 @@ public class MaxDistanceOfTwoNodes {
 
     public int max = 0;
     public static void main(String[] args) {
-        int[] a = new int[]{1,2};
+        int[] a = new int[]{1,2,3,4,5,6};
         MaxDistanceOfTwoNodes maxDistanceOfTwoNodes = new MaxDistanceOfTwoNodes();
         TreeNode root = Utils.newTreeFromArray(a);
         Utils.printTreePretty(root);

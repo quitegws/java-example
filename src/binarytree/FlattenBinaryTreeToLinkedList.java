@@ -41,9 +41,50 @@ public class FlattenBinaryTreeToLinkedList {
     
 
     public static void main(String[] args){
-    	TreeNode root = Utils.newTreeFromArray(new int[]{1,2,3,4,5});
+    	TreeNode root = Utils.newTreeFromArray(new int[]{1,2});
     	Utils.printTreePretty(root);
-    	flatten(root);
+//    	flatten(root);
+
+		FlattenBinaryTreeToLinkedList flattenBinaryTreeToLinkedList = new FlattenBinaryTreeToLinkedList();
+
+		flattenBinaryTreeToLinkedList.flattens(root);
     	Utils.printTreePretty(root);
-    }
+	}
+
+	public void flattens(TreeNode root) {
+		preTraverse(root);
+	}
+
+
+	public TreeNode preTraverse(TreeNode root){
+		if (root == null) {
+			return null;
+		}
+
+		if (root.left == null && root.right == null) {
+			return root;
+		}
+
+
+		TreeNode left = root.left;
+		TreeNode right = root.right;
+
+		if (left == null) {
+			return preTraverse(right);
+		} else if (right == null) {
+			root.right = root.left;
+			root.left = null;
+			return preTraverse(left);
+
+		}
+
+		TreeNode leftList = preTraverse(left);
+		root.right = left;
+		root.left = null;
+		leftList.right = right;
+		TreeNode rightList = preTraverse(right);
+
+
+		return rightList;
+	}
 }
