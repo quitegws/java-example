@@ -1,12 +1,13 @@
 package test;
-public class NULL {
+
+public class N {
 
     public static void print(){
         System.out.println("MTDP");
     }
     public static void main(String[] args) {
         try{
-            ((NULL)null).print();
+            ((N)null).print();
         }catch(NullPointerException e){
             System.out.println("NullPointerException");
         }

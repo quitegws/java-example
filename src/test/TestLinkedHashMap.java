@@ -1,8 +1,6 @@
 package test;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @Author: gws
@@ -11,11 +9,11 @@ import java.util.Set;
  */
 public class TestLinkedHashMap {
     public static void main(String[] args) {
-        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>(16,0.75f,false);
+        LinkedHashMap<Integer, List<String>> map = new LinkedHashMap<>(16,0.75f,false);
 
-        map.put(1,1);
-        map.put(2,2);
-        map.put(3,3);
+        map.put(1,new ArrayList<>());
+        map.put(2,new ArrayList<>());
+        map.put(3,new ArrayList<>());
 
         System.out.println(map);
 
