@@ -48,8 +48,3 @@ public class Connect {
     }
 }
 
-class TreeLinkNode {
-        TreeLinkNode left;
-        TreeLinkNode right;
-        TreeLinkNode next;
-}

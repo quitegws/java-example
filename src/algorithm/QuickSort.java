@@ -10,7 +10,7 @@ public class QuickSort {
         quickSort(A, 0, A.length - 1);
     }
 
-public static int getMiddle(int[] list, int low, int high) {
+    public static int getMiddle(int[] list, int low, int high) {
     //数组的第一个作为中轴
         int tmp = list[low];
         while (low < high) {  

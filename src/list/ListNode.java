@@ -1,6 +1,6 @@
 package list;
 
- public class ListNode {
+public class ListNode {
     public int val;
     public ListNode next;
     public ListNode(int x) {
@@ -11,4 +11,4 @@ package list;
     	val = 0;
     	next = null;
     }
- }
+}
