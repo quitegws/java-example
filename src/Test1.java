@@ -44,5 +44,12 @@ public class Test1 {
         System.out.println(sum);
 
 
+        StringBuilder sb = new StringBuilder();
+        sb.append("a");
+        sb.append("b");
+        sb.append("c");
+
+        sb.insert(0,"b");
+        System.out.println(sb.toString());
     }
 }
