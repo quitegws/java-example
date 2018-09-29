@@ -151,3 +151,43 @@ public class HeapSort {
         arr[i] = temp;//将temp值放到最终的位置
     }
 }
+
+class MyHeapSort{
+    public static void heapSort(int[] nums){
+        heapify(nums);
+
+        for(int i = nums.length - 1; i >= 0; i--){
+            swap(nums, 0, i);
+            adjustHeap(nums, 0, i);
+        }
+    }
+
+    public static void heapify(int[] nums){
+        for(int i = nums.length / 2 - 1; i >= 0; i--){
+            adjustHeap(nums, i, nums.length);
+        }
+    }
+
+    public static void adjustHeap(int[] nums, int i, int len){
+        int tmp = nums[i];
+
+        for(int k = 2 * i + 1; k < len; k = 2 * k + 1){
+            if(k + 1 < len && nums[k + 1] > nums[k]){
+                k++;
+            }
+            if(nums[i] < nums[k]){
+                nums[i] = nums[k];
+                i = k;
+            } else {
+                break;
+            }
+        }
+        nums[i] = tmp;
+    }
+
+    public static void swap(int[] nums, int i , int j){
+        int tmp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = tmp;
+    }
+}
